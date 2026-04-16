@@ -1,7 +1,3 @@
-"""
-MCP Tools for opendataloader-mcp PDF processing.
-"""
-
 import json
 import tempfile
 import re
@@ -22,8 +18,6 @@ from .decorators import (
     clear_cache_storage
 )
 from .helpers import _resolve_input, _run_convert, _collect_outputs
-
-# ─── Parse PDF Tool ─────────────────────────────────────────────────────────
 
 @track_metrics
 @cache_result
@@ -117,8 +111,6 @@ def parse_pdf(
             tmpdir.cleanup()
 
 
-# ─── Batch Process Tool ─────────────────────────────────────────────────────
-
 @track_metrics
 def batch_parse_pdfs(
     sources: list[str],
@@ -174,7 +166,7 @@ def batch_parse_pdfs(
     return json.dumps(results, ensure_ascii=False, indent=2)
 
 
-# ─── Extract Tables Tool ────────────────────────────────────────────────────
+
 
 @track_metrics
 def extract_tables(
@@ -254,7 +246,7 @@ def extract_tables(
             tmpdir.cleanup()
 
 
-# ─── PDF Info Tool ──────────────────────────────────────────────────────────
+
 
 @track_metrics
 def pdf_info(source: str) -> str:
@@ -342,7 +334,7 @@ def pdf_info(source: str) -> str:
             tmpdir.cleanup()
 
 
-# ─── Search Tool ────────────────────────────────────────────────────────────
+
 
 @track_metrics
 def search_pdf_content(
@@ -422,7 +414,7 @@ def search_pdf_content(
             tmpdir.cleanup()
 
 
-# ─── Format Conversion Tool ─────────────────────────────────────────────────
+
 
 @track_metrics
 def convert_pdf_format(
@@ -470,7 +462,7 @@ def convert_pdf_format(
         })
 
 
-# ─── Server Configuration Tools ─────────────────────────────────────────────
+
 
 def get_server_config() -> str:
     """Get current server configuration and capabilities."""

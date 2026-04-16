@@ -1,7 +1,3 @@
-"""
-Decorators for opendataloader-mcp: retry logic, metrics tracking, and caching.
-"""
-
 import time
 import hashlib
 from functools import wraps
@@ -11,12 +7,10 @@ from datetime import datetime
 from .config import logger, MAX_RETRIES, RETRY_BACKOFF, CACHE_SIZE
 import json
 
-# ─── Cache Storage ──────────────────────────────────────────────────────────
 
 _pdf_cache: Dict[str, Dict[str, Any]] = {}
 _cache_metadata: Dict[str, Dict[str, Any]] = {}
 
-# ─── Retry Decorator ────────────────────────────────────────────────────────
 
 def retry_operation(max_retries: int = MAX_RETRIES, backoff: float = RETRY_BACKOFF):
     """Decorator to retry failed operations with exponential backoff."""
@@ -40,7 +34,7 @@ def retry_operation(max_retries: int = MAX_RETRIES, backoff: float = RETRY_BACKO
         return wrapper
     return decorator
 
-# ─── Metrics Decorator ──────────────────────────────────────────────────────
+
 
 def track_metrics(func: Callable) -> Callable:
     """Decorator to track performance metrics."""
@@ -71,7 +65,7 @@ def track_metrics(func: Callable) -> Callable:
             raise
     return wrapper
 
-# ─── Cache Decorator ────────────────────────────────────────────────────────
+
 
 def cache_result(func: Callable) -> Callable:
     """Decorator to cache PDF parsing results."""
@@ -104,7 +98,7 @@ def cache_result(func: Callable) -> Callable:
         return result
     return wrapper
 
-# ─── Cache Management ───────────────────────────────────────────────────────
+
 
 def get_cache_stats() -> Dict[str, Any]:
     """Get cache statistics."""

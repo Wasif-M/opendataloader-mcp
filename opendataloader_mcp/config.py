@@ -1,10 +1,7 @@
-"""
-Configuration and constants for opendataloader-mcp server.
-"""
 
 import logging
 
-# ─── Logging Configuration ──────────────────────────────────────────────────
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,7 +9,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("opendataloader-mcp")
 
-# ─── Server Configuration ───────────────────────────────────────────────────
+
 
 # Retry logic
 MAX_RETRIES = 3

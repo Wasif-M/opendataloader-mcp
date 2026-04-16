@@ -1,7 +1,3 @@
-"""
-Helper functions for opendataloader-mcp PDF processing.
-"""
-
 import os
 import tempfile
 import urllib.request
@@ -12,7 +8,7 @@ from typing import Tuple, Optional
 from .config import logger, REQUEST_TIMEOUT
 from .decorators import retry_operation
 
-# ─── File Operations ────────────────────────────────────────────────────────
+
 
 @retry_operation()
 def _resolve_input(source: str) -> Tuple[list[str], Optional[tempfile.TemporaryDirectory]]:

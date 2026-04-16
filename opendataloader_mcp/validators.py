@@ -1,14 +1,10 @@
-"""
-Validation functions for opendataloader-mcp.
-"""
-
 import re
 from pathlib import Path
 from typing import Tuple
 
 from .config import logger, SUPPORTED_FORMATS
 
-# ─── Validators ─────────────────────────────────────────────────────────────
+
 
 def validate_pdf_source(source: str) -> Tuple[bool, str]:
     """

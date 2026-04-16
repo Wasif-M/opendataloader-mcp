@@ -1,7 +1,3 @@
-"""
-Main entry point for opendataloader-mcp MCP server.
-"""
-
 from mcp.server.fastmcp import FastMCP
 from .tools import (
     parse_pdf,
