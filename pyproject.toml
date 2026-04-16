@@ -1,0 +1,22 @@
+[project]
+name = "opendataloader-pdf-mcp"
+version = "0.1.0"
+description = "MCP server exposing opendataloader-pdf to Claude"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "opendataloader-pdf>=2.0.0",
+]
+
+[project.optional-dependencies]
+hybrid = [
+    "opendataloader-pdf[hybrid]>=2.0.0",
+]
+
+[project.scripts]
+opendataloader-mcp = "server:mcp"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
