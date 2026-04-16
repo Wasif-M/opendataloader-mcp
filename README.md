@@ -96,6 +96,32 @@ Restart Claude Desktop. You will see the tools listed in the tool panel.
 
 ---
 
+## Usage Examples
+
+Once installed, simply ask Claude to process your PDFs:
+
+### Parse PDF to Markdown
+```
+Parse this PDF to markdown: C:\path\to\file.pdf
+```
+
+### Extract Tables
+```
+Extract tables from this PDF: C:\path\to\file.pdf
+```
+
+### Get PDF Info
+```
+Give me a quick overview of this PDF: C:\path\to\file.pdf
+```
+
+### Remote URLs
+```
+Parse this PDF from the web: https://example.com/document.pdf
+```
+
+---
+
 ## Add to Claude Code (CLI)
 
 ```bash
