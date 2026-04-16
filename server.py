@@ -1,17 +1,17 @@
 """
 opendataloader-pdf MCP Server
-Exposes parse_pdf and extract_tables as Claude tools via stdio transport.
 
-Features:
+A lightweight wrapper that exposes PDF processing tools to Claude via the Model Context Protocol.
+Delegates all operations to the modular opendataloader_mcp package for clean separation of concerns.
+
+Key Capabilities:
 - Batch processing of multiple PDFs
-- Enhanced error handling with detailed messages
-- Logging and performance metrics
-- Caching layer for repeated requests
-- Data validation and format conversion
-- Content search within PDFs
-- Retry logic for failed operations
-
-This is a wrapper that delegates to the modular opendataloader_mcp package.
+- Robust error handling with detailed error messages
+- Performance tracking and logging
+- Intelligent caching for frequently accessed PDFs
+- Format conversion (Markdown, JSON, HTML, Text)
+- Full-text search with regex support
+- Automatic retry with exponential backoff for resilience
 """
 
 from opendataloader_mcp.server import mcp
