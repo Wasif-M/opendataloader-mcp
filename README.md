@@ -156,6 +156,3 @@ opendataloader-mcp/
 
 ---
 
-## License
-
-Apache 2.0 — same as opendataloader-pdf.
